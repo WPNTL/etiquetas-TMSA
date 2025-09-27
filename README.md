@@ -1,108 +1,81 @@
-# PDF para Etiquetas - Versão Python
+# PDF para Etiquetas
 
-Este programa é uma recriação em Python do sistema original desenvolvido em Pascal/Lazarus por [@guaracy](https://github.com/guaracy).  
-A versão em Python mantém a ideia original, mas moderniza a interface e melhora a portabilidade.
+Conversor de arquivos **PDF** para imagens de **etiquetas** personalizadas em **PNG**.
 
-## Funcionalidades
+Este projeto é uma **recriação em Python** do sistema original escrito em **Pascal/Lazarus** por [@guaracy](https://github.com/guaracy).
 
-- **Conversão PDF para Texto**: Utiliza o `pdftotext` para extrair texto de arquivos PDF
-- **Geração de Etiquetas**: Cria imagens PNG personalizadas com as informações extraídas
-- **Interface Gráfica Minimalista**: Interface intuitiva desenvolvida com Tkinter
-- **Preview de Etiquetas**: Visualização das etiquetas geradas
-- **Gerenciamento de Arquivos**: Funcionalidade para excluir imagens geradas
+---
 
-## Principais Melhorias em Relação à Versão Pascal
+## ✨ Funcionalidades
 
-### ✅ Remoção da Dependência de Fonte
-- **Problema Original**: Necessitava instalação da fonte Antonio-Bold
-- **Solução**: Utiliza fontes padrão do Windows (Arial, Arial Bold)
-- **Fallback**: Fonte padrão do sistema caso as fontes específicas não estejam disponíveis
+- Converte PDF para texto usando **pdftotext** (Poppler).
+- Gera etiquetas personalizadas em formato **PNG**.
+- Interface gráfica minimalista em **Tkinter**.
+- Preview integrado das etiquetas geradas.
+- Botão **Excluir Imagens**: remove todas as etiquetas geradas.
+- **Novo:** Botão **Salvar Imagens** → permite escolher a pasta de destino para salvar as etiquetas.
+  - Após salvar, aparece um **popup de confirmação** informando a quantidade total de etiquetas geradas.
+  - O diretório escolhido passa a ser usado como base para **pré-visualização** e **exclusão**.
 
-### ✅ Interface Modernizada
-- Layout responsivo com frames organizados
-- Lista de etiquetas com scrollbar
-- Preview em tempo real das etiquetas
-- Barra de status informativa
+---
 
-### ✅ Tratamento de Erros Robusto
-- Validação de arquivos PDF
-- Tratamento de caracteres especiais em nomes de arquivo
-- Mensagens de erro informativas
+## 🖼️ Layout das Etiquetas
 
-### ✅ Parsing Aprimorado
-- Agora o processamento é feito **página a página**, evitando erros causados por `\x0c` (formfeed)
-- Extração mais confiável de título, código, cliente e número da O.S.
+- Inclui **logo da empresa** (`projelmec.png`) no topo.
+- Bordas, título em destaque, e informações de produto/cliente/OS.
+- Rodapé com dados de **Matriz**, **Filial** e **Website**.
 
-## Requisitos do Sistema
+---
 
-### Dependências Python
-```bash
-pip install pillow
-```
+## ⚙️ Requisitos
 
-### Dependências do Sistema
-- **Linux (Ubuntu/Debian)**:
-  ```bash
-  sudo apt-get install python3-tk poppler-utils
-  ```
+- Python 3.8+
+- Dependências Python:
+  - `tkinter`
+  - `Pillow`
+- `pdftotext` (parte do **Poppler**):
+  - Linux (Ubuntu/Debian): `sudo apt-get install poppler-utils`
+  - Windows: [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)
 
-- **Windows**:
-  - Python 3.x com Tkinter (geralmente incluído)
-  - Poppler for Windows: https://github.com/oschwartz10612/poppler-windows/releases
+---
 
-## Como Usar
+## 🚀 Como Usar
 
-1. **Executar o Programa**:
+1. Clone este repositório ou baixe os arquivos.
+2. Coloque o arquivo `projelmec.png` no mesmo diretório do script (ou junto ao PDF).
+3. Execute o programa:
+
    ```bash
    python3 pdf2etiqueta.py
    ```
 
-2. **Processar PDF**:
-   - Clique em "Processar PDF"
-   - Selecione o arquivo PDF desejado
-   - Aguarde o processamento
+4. Clique em **Processar PDF** e selecione o arquivo desejado.
+5. Visualize as etiquetas na interface.
+6. Clique em **Salvar Imagens** para escolher o diretório de destino.
+   - Após salvar, aparecerá uma mensagem:
+     ```
+     Imagens salvas com sucesso: 148 etiquetas geradas
+     ```
 
-3. **Visualizar Etiquetas**:
-   - As etiquetas aparecerão na lista à esquerda
-   - Clique em uma etiqueta para ver o preview
+---
 
-4. **Gerenciar Arquivos**:
-   - Use "Excluir Imagens" para remover todas as etiquetas geradas
+## 📂 Estrutura de Arquivos
 
-## Estrutura das Etiquetas
+```
+pdf2etiqueta.py       # Código principal
+README.md             # Este arquivo
+projelmec.png         # Logo (necessário para as etiquetas)
+```
 
-Cada etiqueta contém:
-- **Logo da Empresa** (se disponível)
-- **Título do Produto/Serviço**
-- **Código do Produto**
-- **Código do Cliente**
-- **Número da O.S./Item**
-- **Informações da Empresa**:
-  - Matriz: Sapucaia do Sul/RS (51)3451.5100
-  - Filial: São Paulo/SP (11)5571.6329
-  - Website: www.projelmec.com.br
+---
 
-## Arquivos de Saída
+## 📝 Créditos
 
-- **Formato**: PNG (640x400 pixels)
-- **Nomenclatura**: Baseada no número da O.S.
-- **Localização**: Mesmo diretório do PDF original
+- Sistema original desenvolvido em **Pascal/Lazarus** por [@guaracy](https://github.com/guaracy).  
+- Versão em **Python/Tkinter** adaptada e expandida com novas funcionalidades.
 
-## Diferenças da Versão Original
+---
 
-| Aspecto | Original (Pascal/Lazarus) | Nova Versão (Python/Tkinter) |
-|---------|---------------------------|------------------------------|
-| **Fonte** | Antonio-Bold (instalação obrigatória) | Arial/Arial Bold (padrão Windows) |
-| **Interface** | Lazarus/LCL | Tkinter (nativo Python) |
-| **Dependências** | Poppler + Fonte específica | Poppler + PIL |
-| **Portabilidade** | Windows/Linux com dependências | Multiplataforma |
-| **Manutenção** | Compilação necessária | Script Python direto |
+## 📜 Licença
 
-## Créditos
-
-- **Autor original**: [@guaracy](https://github.com/guaracy), criador da versão em Pascal/Lazarus.  
-- **Versão em Python**: Adaptação e melhorias para portabilidade, interface gráfica e robustez no parsing de PDFs.
-
-## Licença
-
-Este programa é baseado na versão original de [@guaracy](https://github.com/guaracy) e distribuído de forma aberta para uso e adaptação.
+Distribuído sob a licença MIT. Consulte `LICENSE` para mais informações.
