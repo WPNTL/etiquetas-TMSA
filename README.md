@@ -11,6 +11,9 @@ Este projeto é uma **recriação em Python** do sistema original escrito em **P
 - Converte PDF para texto usando **pdftotext** (Poppler).
 - Gera etiquetas personalizadas em formato **PNG**.
 - Interface gráfica minimalista em **Tkinter**.
+- **Novo:** Tema escuro integrado baseado no **Dracula Theme** 🎨.
+  - Fundo escuro `#282a36`, texto claro `#f8f8f2` e detalhes em roxo/azul.
+  - Aplicado a toda a interface: botões, listbox, labels e status bar.
 - Preview integrado das etiquetas geradas.
 - Botão **Excluir Imagens**: remove todas as etiquetas geradas.
 - **Novo:** Botão **Salvar Imagens** → permite escolher a pasta de destino para salvar as etiquetas.
