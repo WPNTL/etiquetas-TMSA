@@ -16,7 +16,8 @@ Este projeto é uma **recriação em Python** do sistema original escrito em **P
 - **Novo:** Botão **Salvar Imagens** → permite escolher a pasta de destino para salvar as etiquetas.
   - Após salvar, aparece um **popup de confirmação** informando a quantidade total de etiquetas geradas.
   - O diretório escolhido passa a ser usado como base para **pré-visualização** e **exclusão**.
-
+- **Novo:** Logo da empresa embutida em Base64 no código.
+  - Não é mais necessário manter o arquivo projelmec.png junto ao programa.
 ---
 
 ## 🖼️ Layout das Etiquetas
