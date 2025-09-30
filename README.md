@@ -20,7 +20,7 @@ Este projeto é uma **recriação em Python** do sistema original escrito em **P
   - Após salvar, aparece um **popup de confirmação** informando a quantidade total de etiquetas geradas.
   - O diretório escolhido passa a ser usado como base para **pré-visualização** e **exclusão**.
 - **Novo:** Logo da empresa embutida em Base64 no código.
-  - Não é mais necessário manter o arquivo projelmec.png junto ao programa.
+  - Não é mais necessário manter o arquivo `projelmec.png` junto ao programa.
 ---
 
 ## 🖼️ Layout das Etiquetas
@@ -68,7 +68,6 @@ Este projeto é uma **recriação em Python** do sistema original escrito em **P
 ```
 pdf2etiqueta.py       # Código principal
 README.md             # Este arquivo
-projelmec.png         # Logo (necessário para as etiquetas)
 ```
 
 ---
